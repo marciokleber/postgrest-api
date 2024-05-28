@@ -45,8 +45,17 @@ CREATE ROLE web_anon nologin; -- PERMISSÃO READ-ONLY
 GRANT usage ON SCHEMA api TO web_anon; -- DÁ ACESSO AOS OBJETOS DO ESQUEMA [API]
 GRANT SELECT ON api.produto TO web_anon; -- DÁ ACESSO A LEITURA DO REGISTRO DA TABELA [PRODUTO]
 
+-- PERMISSÕES PARA INSERT
+GRANT INSERT ON api.produto TO web_anon;
+GRANT usage ON SEQUENCE api.produto_id_seq TO web_anon;
+GRANT SELECT ON api.produto TO web_anon;
+
+-- PERMISSÕES PARA UPDATE
+GRANT UPDATE ON api.produto TO web_anon;
+
+-- PERMISSÕES PARA DELETE
+GRANT DELETE ON api.produto TO web_anon;
+
 -- ROLE PERFIL PARA AUTENTICAÇÃO PARA NÃO USAR O USUÁRIO ROOT
 CREATE ROLE usuario noinherit LOGIN PASSWORD 'senha';
 GRANT web_anon TO usuario;
-
-
