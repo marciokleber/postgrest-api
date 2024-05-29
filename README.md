@@ -20,10 +20,16 @@ docker compose up postgrest
 ```
 
 
+
 >## Endpoints
 >>#### FindById
 >>``` 
 >>curl http://localhost:3000/produto?id=eq.1
+>>```
+>
+>>#### FindAll Autenticado
+>>``` 
+>>curl -X GET http://localhost:3000/produto -H "Authorization: Bearer $TOKEN"
 >>```
 >
 >>#### FindAll
