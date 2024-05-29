@@ -19,6 +19,7 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=postgrest
+    command: ["postgres", "-c", "log_statement=all"]  # override entrypoint command with log_statement argument
     ports:
       - "5432:5432"
   
